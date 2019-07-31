@@ -1,0 +1,43 @@
+bool isPalindrome(int x){
+  int a[50]={0};
+    int i=0;
+    int j=0;
+    int flag=0;
+    if(x==0){
+        i=1;
+    }
+    if(x<0){
+        return false;
+    }
+    while (x!=0) {
+        a[i]=x%10;
+        i++;
+        x=x/10;
+    }
+    if(i==1){
+        return true;
+    }
+    i-=1;
+    while (1) {
+        if(a[j]!=a[i]){
+            flag=1;
+            break;
+        }
+        i--;
+        j++;
+        if(i==j || j>i){
+            break;
+        }
+    }
+    if(flag==0){
+        return true;
+    }
+    return false;
+}
+
+//执行结果：通过
+//执行用时 :12 ms, 在所有 C 提交中击败了82.56%的用户
+//内存消耗 :7.2 MB, 在所有 C 提交中击败了80.41%的用户
+
+
+
